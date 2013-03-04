@@ -6,7 +6,7 @@
 	<name>DropletRestrict</name>
 	<groupId>org.spout.droplet</groupId>
 	<artifactId>restrict</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.1</version>
 	<url>http://www.spout.org</url>
 	<inceptionYear>2013</inceptionYear>
 	<description>Restriction "Droplet" plugin for the Spout platform to demonstrate the usage of material restriction and permissions.</description>
@@ -37,9 +37,9 @@
 
 	<!-- Source code access -->
 	<scm>
-		<developerConnection>scm:git:git@github.com:Droplets/DropletRestrict.git</developerConnection>
-		<connection>scm:git:git://github.com/Droplets/DropletRestrict.git</connection>
-		<url>https://github.com/Droplets/DropletRestrict</url>
+		<developerConnection>scm:git:git@github.com:Droplet/DropletRestrict.git</developerConnection>
+		<connection>scm:git:git://github.com/Droplet/DropletRestrict.git</connection>
+		<url>https://github.com/Droplet/DropletRestrict</url>
 	</scm>
 
 	<!-- Build server -->
