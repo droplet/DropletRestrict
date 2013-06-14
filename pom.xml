@@ -1,5 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<!-- Project information -->
@@ -7,6 +6,7 @@
 	<groupId>org.spout.droplet</groupId>
 	<artifactId>restrict</artifactId>
 	<version>0.1</version>
+	<packaging>jar</packaging>
 	<url>http://www.spout.org</url>
 	<inceptionYear>2013</inceptionYear>
 	<description>Restriction "Droplet" plugin for the Spout platform to demonstrate the usage of material restriction and permissions.</description>
@@ -15,7 +15,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<buildNumber>0</buildNumber><!-- DO NOT TOUCH! -->
-		<platform>SERVER</platform><!-- CLIENT/SERVER/BOTH -->
+		<platform>SERVER</platform><!-- CLIENT/SERVER/PROXY/ALL -->
 		<reload>true</reload><!-- true/false -->
 		<spoutVersion>dev-SNAPSHOT</spoutVersion>
 	</properties>
@@ -42,37 +42,29 @@
 		<url>https://github.com/Droplet/DropletRestrict</url>
 	</scm>
 
-	<!-- Build server -->
+	<!-- Continuous integration -->
 	<ciManagement>
-		<system>jenkins</system>
-		<url>http://build.spout.org/job/DropletRestrict</url>
+		<system>travis</system>
+		<url>https://travis-ci.org/Droplet/DropletRestrict</url>
 	</ciManagement>
 
-	<!-- Issue tracker -->
+	<!-- Issue management -->
 	<issueManagement>
 		<system>jira</system>
-		<url>http://issues.spout.org/browse/DROPLET</url>
+		<url>https://spoutdev.atlassian.net/browse/DROPLET</url>
 	</issueManagement>
 
 	<!-- Dependency repositories -->
 	<repositories>
 		<repository>
 			<id>spout-repo</id>
-			<url>http://repo.spout.org</url>
+			<url>http://nexus.spout.org/content/groups/public/</url>
 			<snapshots>
 				<enabled>true</enabled>
 				<updatePolicy>always</updatePolicy>
 			</snapshots>
 		</repository>
 	</repositories>
-
-	<!-- Build plugin repositories -->
-	<pluginRepositories>
-		<pluginRepository>
-			<id>spout-repo</id>
-			<url>http://repo.spout.org</url>
-		</pluginRepository>
-	</pluginRepositories>
 
 	<!-- Project dependencies -->
 	<dependencies>
@@ -130,7 +122,7 @@
 							<quiet>true</quiet>
 							<encoding>UTF-8</encoding>
 							<strictCheck>true</strictCheck>
-							<header>${project.basedir}/HEADER.txt</header>
+							<header>HEADER.txt</header>
 							<mapping>
 								<java>SLASHSTAR_STYLE</java>
 							</mapping>
@@ -154,7 +146,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.0</version>
+				<version>3.1</version>
 				<configuration>
 					<source>1.6</source>
 					<target>1.6</target>
